@@ -16,6 +16,9 @@ h1 {
 	margin: 0px; 
 	margin-bottom: 12px;
 }
+h2{
+	background-color: #43d364;
+}
 
 ul{
 	margin: 0;
@@ -35,6 +38,40 @@ a {
 	color: #f90; 
 	text-decoration: none;
 }
+header{
+	display: grid;
+	text-align: center;
+	grid-template-columns: 3fr 1fr;
+	margin: 10px auto;
+	background-color: #ff2e09;
+	grid-gap: 5px;
+}
+
+.mainPage{
+	background-color: #BF7C41;
+	display: grid;
+	grid-template-rows: auto auto;
+	grid-gap: 5px;
+}
+
+.contentAlign{
+	text-align: center;
+}
+.contentSplit{
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 15px;
+}	
+
+
+main {
+	background-color: #eee;
+	margin: 10px auto;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-gap: 10px;
+}
+
 
 a:hover {  
 	text-decoration: underline;

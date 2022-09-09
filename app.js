@@ -20,8 +20,6 @@ app.listen(port, () =>
     console.log('Server running at ${port}'));
 
 
-
-
 app.get('/recipe', (req, res) => {
     let sql = "select * from recipe"
     let params = []
