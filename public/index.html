@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe page</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -10,34 +9,129 @@
 <body>
     <header>
         <h1>This is Title</h1>
-        <h2 >This is the searchbox</h2>
+
+        <div>
+            <input type="text" placeholder="Searchbox">
+            <button type="text"> Search </button>
+        </div>
+
     </header>
     <main>
     <section>
-        <div> <p>This is shit</p> </div>
+        <div> <p>main > section > div > p </p> </div>
         <div class="contentAlign">
             <h2>Recipes</h2>
-             <p>this is the other shit</p>
-            <p>This is the fun part of the text</p>
-            <img src="./img/example_recipe.jpg" width="50%" >
+
+            <div> <a href="testsida.html"> Ghee </a>
+                <div class="rate">
+                    <!-- Star 5 -->
+                    <input type="radio" id="star5" name="rate" value="5" />
+                    <label for="star5" title="text">5 stars</label>
+
+                    <!-- Star 4 -->
+                    <input type="radio" id="star4" name="rate" value="4" />
+                    <label for="star4" title="text">4 stars</label>
+
+                    <!-- Star 3 -->
+                    <input type="radio" id="star3" name="rate" value="3" />
+                    <label for="star3" title="text">3 stars</label>
+
+                    <!-- Star 2 -->
+                    <input type="radio" id="star2" name="rate" value="2" />
+                    <label for="star2" title="text">2 stars</label>
+
+                    <!-- Star 1 -->
+                    <input type="radio" id="star1" name="rate" value="1" />
+                    <label for="star1" title="text">1 star</label>
+
+            </div>
+            
+            </div>
+
+            <div> <a href="testsida.html"> Mayak Ägg </a>
+                <div class="rate">
+                    <!-- Star 5 -->
+                    <input type="radio" id="2star5" name="rate2" value="5" />
+                    <label for="2star5" title="text">5 stars</label>
+
+                    <!-- Star 4 -->
+                    <input type="radio" id="2star4" name="rate2" value="4" />
+                    <label for="2star4" title="text">4 stars</label>
+
+                    <!-- Star 3 -->
+                    <input type="radio" id="2star3" name="rate2" value="3" />
+                    <label for="2star3" title="text">3 stars</label>
+
+                    <!-- Star 2 -->
+                    <input type="radio" id="2star2" name="rate2" value="2" />
+                    <label for="2star2" title="text">2 stars</label>
+
+                    <!-- Star 1 -->
+                    <input type="radio" id="2star1" name="rate2" value="1" />
+                    <label for="2star1" title="text">1 star</label>
+
+                </div>
+
+            </div>
+
+            <div> <a href="testsida.html"> Vegetarisk Bulgursallad </a>
+                <div class="rate">
+
+                    <!-- Star 5 -->
+                    <input type="radio" id="3star5" name="rate3" value="5" />
+                    <label for="3star5" title="text">5 stars</label>
+
+                    <!-- Star 4 -->
+                    <input type="radio" id="3star4" name="rate3" value="4" />
+                    <label for="3star4" title="text">4 stars</label>
+
+                    <!-- Star 3 -->
+                    <input type="radio" id="3star3" name="rate3" value="3" />
+                    <label for="3star3" title="text">3 stars</label>
+
+                    <!-- Star 2 -->
+                    <input type="radio" id="3star2" name="rate3" value="2" />
+                    <label for="3star2" title="text">2 stars</label>
+
+                    <!-- Star 1 -->
+                    <input type="radio" id="3star1" name="rate3" value="1" />
+                    <label for="3star1" title="text">1 star</label>
+
+                </div>
+            
+            
+            </div>
+            
+
+
+           
         </div>
         <div class="contentSplit">
             <section>
-        <h2>funny <textarea name="" id="" cols="10" rows="5"></textarea></h2>
+                <h2>h2 > textarea > name with id,cols,rows <textarea name="" id="" cols="10" rows="5"></textarea></h2>
             </section>
+
         <section>
         <h1>Sitter i en divider</h1>
-        <p>Kaka sitter i en annan kaka för skojs skull</p>
+        <p> <a href="testsida.html"> Ghee </a> </p>
+        <p> <a href="testsida.html"> Mayak Ägg </a> </p>
+        <p> <a href="testsida.html"> Vegetarisk Bulgursallad </a> </p>
         </section>
+
+
         </div>
     </section>
-    <section class="mainpage">
-        <div> <h3>This is commercials</h3> </div>
-        <img src="./img/R-3169613-1437519068-4496.jpg" max width="450px" height="2000px">
+    <section class="mainPage commercial1" >
+        <div> 
+            <h3>This is commercials</h3> </div>       
+            <img src="./img/R-3169613-1437519068-4496.jpg">
+        </div>
     </section>
     </main>
 
 
+
+    <!-- Vue Script -->
     <script src="https://unpkg.com/vue@3"></script>
     <script>
         const app = Vue.createApp({

@@ -47,12 +47,26 @@ header{
 	grid-gap: 5px;
 }
 
+main {
+	background-color: #eee;
+	margin: 10px auto;
+	display: grid;
+	grid-template-columns:  1fr;
+	grid-gap: 10px;
+}
+
 .mainPage{
 	background-color: #BF7C41;
 	display: grid;
 	grid-template-rows: auto auto;
 	grid-gap: 5px;
 }
+
+
+.commercial1{
+	visibility: hidden;
+}
+
 
 .contentAlign{
 	text-align: center;
@@ -63,14 +77,6 @@ header{
 	grid-gap: 15px;
 }	
 
-
-main {
-	background-color: #eee;
-	margin: 10px auto;
-	display: grid;
-	grid-template-columns: 3fr 1fr;
-	grid-gap: 10px;
-}
 
 
 a:hover {  
@@ -100,6 +106,57 @@ footer{
 
 
 
+/* Star Rating */
+
+
+.rate
+{
+	height: 46px;
+	padding: 0 10px;
+}
+
+.rate:not(:checked) > input
+{
+	position:absolute;
+	top: -9999px;
+}
+.rate:not(:checked) > label
+{
+	float:right;
+	width: 1em;
+	overflow:hidden;
+	white-space:nowrap;
+	font-size:20px;
+    color:#ccc;
+}
+
+.rate:not(:checked) > label:before
+{
+    content: '★ ';
+}
+.rate > input:checked ~ label
+{
+    color: #ffc700;    
+}
+
+
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label
+{
+    color: #deb217;  
+}
+
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+/* END -- Star Rating */
+
+
 /* Color Theme Swatches in Hex */
 .Knock-Knock-SparkStorys-#002-1-hex { color: #F2C84B; }
 .Knock-Knock-SparkStorys-#002-2-hex { color: #BF7C41; }
@@ -107,3 +164,34 @@ footer{
 .Knock-Knock-SparkStorys-#002-4-hex { color: #BFA288; }
 .Knock-Knock-SparkStorys-#002-5-hex { color: #261A18; }
 
+
+/* Detta är en Desktop */
+@media screen and (min-width: 1025px){
+	main {
+		background-color: #eee;
+		margin: 10px auto;
+		display: grid;
+		grid-template-columns: 3fr 1fr;
+		grid-gap: 10px;
+	}
+	img{
+		width: 100%;
+		height: fit-content;
+	}
+	.commercial1{
+		visibility: visible;
+	}
+}
+
+
+/* Detta är en Tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px){
+	.main {
+		background-color: #eee;
+		margin: 10px auto;
+		display: grid;
+		grid-gap: 10px;
+	}
+	
+	
+}
