@@ -2,7 +2,8 @@
 body {
 	background-image: url(../img/pexels-photo-1565982.jpeg);
 	background-repeat: no-repeat;
-	background-size: 2000px 1100px;
+	background-size: cover;
+	background-position: center;
 	background-attachment: fixed;
 	font-family: Arial, Helvetica, sans-serif;
 	
@@ -17,7 +18,7 @@ p {
 
 h1 { 
 	font-family: Georgia, Arial, Helvetica, sans-serif;
-	font-size: 40px;
+	font-size: 30px;
 	margin: 0px; 
 	margin-bottom: 12px;
 }
@@ -54,12 +55,10 @@ header{
 main {
 	margin: 10px auto;
 	display: flexbox;
-
 }
 
 #mainText{
 	background-image: url(../img/unknown.png);
-
 }
 .mainPage{
 	
@@ -73,10 +72,17 @@ main {
 }
 
 .commercial1{
-	visibility: hidden;
+	display: none;
 }
 
-
+.commercial2 img{
+	width: 100%;
+	height: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	bottom: 20px;
+}
 
 .contentAlign{
 	text-align: center;
@@ -92,7 +98,7 @@ main {
 }
 .contentSplit{
 	display: grid;
-	grid-template-columns: auto auto;
+	grid-template-columns: 1fr 1fr;
 	grid-gap: 15px;
 }	
 
@@ -116,7 +122,7 @@ a:hover {
 footer{
     display: block;
     text-align: center;
-    font-size: 0.75em;
+    font-size: .90em;
     bottom:0;
     width: 100%;
     height: 30px;
@@ -186,8 +192,10 @@ footer{
 
 /* Detta är en Desktop */
 @media screen and (min-width: 1025px){
+	h1{
+		font-size: 40px;
+	}
 	main {
-		background-color: #eee;
 		margin: 10px auto;
 		display: grid;
 		grid-template-columns: 3fr 1fr;
@@ -198,12 +206,19 @@ footer{
 		height: fit-content;
 	}
 	.commercial1{
-		visibility: visible;
+		display:block;
+		width: 100%;
+		height: 100%;
+		top: auto;
+		right: 5px;
 	}
 	.contentSplit img{
 		width: 75%;
 	}
-	
+
+	.commercial2{
+		display: none;
+	}
 }
 
 
@@ -212,11 +227,18 @@ footer{
 	.main {
 		background-color: #eee;
 		margin: 10px auto;
-		display: grid;
+		display: grid;	
+		grid-template-columns: 1fr 1fr;
 		grid-gap: 10px;
 	}
 	.contentSplit img{
-		width: 400px;
+		width: 90%;
 	}
-	
+	.commercial1{
+		
+		display: none;
+	}
+	.commercial2{
+		display: block;
+	}
 }
