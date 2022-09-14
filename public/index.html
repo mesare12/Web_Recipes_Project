@@ -20,8 +20,12 @@
     <section id="mainText">
         
         <div class="contentAlign">
-            <h2>Recept</h2>
-
+            <div id="app">
+                <h2>{{msg}}</h2>
+                <ul>
+                    <li v-for="recipe in recipes">{{ recipe.recipeName}} {{recipe.recipeRating}} </li>
+                </ul>
+            </div>
             <!--#region Links with Rating-->
             <div> <a href="testsida.html"> Ghee </a>
                 <div class="rate">
@@ -113,9 +117,10 @@
             </section>
 
         <section>
-        <h1>Vi från Nancy's hörna</h1>
+        <h2>Vi från NomNom's hörna</h2>
         <p> Karl-Johan, Mårten och Nancy</p>
-        <h2>Sociala medier?</h2>
+        <h3>.NET's bästa hörna för mat tips och dålig reklam!</h3>
+        <p>Vi finns på skolan NEWTON varje Tisdag/Torsdag/Fredag</p>
         </section>
         </div>
     </section>
@@ -138,8 +143,19 @@
         const app = Vue.createApp({
             data() {
                 return {
-                    
+                    msg: 'Mina recept',
+                    recipes: []
                 }
+            },
+            mounted(){
+                    fetch('http://localhost:3000/api/recipe')
+                         .then((response) => {
+                            return response.json();
+                        })
+                        .then((data) => {
+                            console.log(data);
+                            this.recipes = data.recipe;
+                        });
             }
         }).mount('#app')
         </script>

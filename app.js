@@ -20,7 +20,7 @@ app.listen(port, () =>
     console.log('Server running at ${port}'));
 
 
-app.get('/recipe', (req, res) => {
+app.get("/api/recipe", (req, res) => {
     let sql = "select * from recipe"
     let params = []
     db.all(sql, params, (err, rows) => {
@@ -33,4 +33,26 @@ app.get('/recipe', (req, res) => {
             "recipe":rows
         })
       })
+});
+
+app.put("/api/recipe", (req, res, next) => {
+  let data = {
+    recipeName: req.body.recipeName,
+    recipeCategory: req.body.recipeCategory,
+    recipeRating: req.body.recipeRating,
+    recipeID: req.body.recipeID
+  }
+  let sql = 'UPDATE recipe SET recipeName = ?, recipeCategory = ?, recipeRating = ? WHERE recipeID = ?';
+  let params =[data.recipeName, data.recipeCategory, data.recipeRating];
+  db.run(sql, params, function(err, result){
+    if(err){
+      res.status(400).json({"error": err.message})
+      return;
+    }
+    res.json({
+      "message":"Success",
+      "recipe" : data,
+      "id"  : this.lastID
+    })
+  })
 });
