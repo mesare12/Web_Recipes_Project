@@ -18,14 +18,13 @@
     </header>
     <main>
     <section id="mainText">
-        
         <div class="contentAlign">
             <div id="app">
                 <h2>{{msg}}</h2>
                 <ul >
                     <li v-for="recipe in recipes" class="contentSplit">
                         <img :src="recipe.recipeImage" alt="Mat bild" class="DbImage">
-                        <span class="grid-item">{{ recipe.recipeName}}: Rating {{recipe.recipeRating}} <br>
+                        <span class="grid-item">{{ recipe.recipeName}}: Rating {{recipe.recipeRating}} <br><br> {{recipe.recipeDescription}} <br>
                         {{recipe.recipeLink}}</span>
                     </li>
                 </ul>

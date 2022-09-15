@@ -57,7 +57,8 @@ header{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: large;
+	font-size:smaller;
+	font-style: italic;
 }
 
 main {
@@ -234,6 +235,9 @@ footer{
 	.commercial2{
 		display: none;
 	}
+	.grid-item{
+		font-size: medium;
+	}
 }
 
 
@@ -255,5 +259,8 @@ footer{
 	}
 	.commercial2{
 		display: block;
+	}
+	.grid-item{
+		font-size: medium;
 	}
 }
