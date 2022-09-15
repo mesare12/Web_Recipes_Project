@@ -10,7 +10,7 @@
     <header>
         <h1 class="contentAlign">.NET NomNom Kitchen </h1>
 
-        <div class="searchbox">
+          <div class="searchbox">
             <input type="text" placeholder="Recept" style="width: 100px;">
             <button type="text"> Sök </button>
         </div>
@@ -22,8 +22,12 @@
         <div class="contentAlign">
             <div id="app">
                 <h2>{{msg}}</h2>
-                <ul>
-                    <li v-for="recipe in recipes">{{ recipe.recipeName}} {{recipe.recipeRating}} </li>
+                <ul >
+                    <li v-for="recipe in recipes" class="contentSplit">
+                        <img :src="recipe.recipeImage" alt="Mat bild" class="DbImage">
+                        <span class="grid-item">{{ recipe.recipeName}}: Rating {{recipe.recipeRating}} <br>
+                        {{recipe.recipeLink}}</span>
+                    </li>
                 </ul>
             </div>
             <!--#region Links with Rating-->
@@ -144,7 +148,7 @@
             data() {
                 return {
                     msg: 'Mina recept',
-                    recipes: []
+                    recipes: [],
                 }
             },
             mounted(){
