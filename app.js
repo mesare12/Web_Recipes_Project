@@ -35,6 +35,7 @@ app.get("/api/recipe", (req, res) => {
       })
 });
 
+//Används just nu inte till ngt. Men om vi kommer på ngt bra så anpassat vi denna.
 app.put("/api/recipe", (req, res, next) => {
   let data = {
     recipeName: req.body.recipeName,
@@ -56,3 +57,20 @@ app.put("/api/recipe", (req, res, next) => {
     })
   })
 });
+
+
+app.get("/api/recipe/:id", (req, res, next) => {
+  let sql = "select * from recipe where recipeID = ?"
+  let params = [req.params.id]
+  db.get(sql, params, (err, row) => {
+      if (err) {
+        res.status(400).json({"error":err.message});
+        return;
+      }
+      res.json({
+          "message":"success",
+          "bok":row
+      })
+    })
+  
+})

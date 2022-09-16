@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple recipes</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="contentAlign">.NET <br>NomNom <br>Kitchen </h1>
+        <a href="index.html" >Tillbaka till startsidan</a>
+       
+
+    </header>
+    <main class="recipes-page" id="mainText">
+        <section class="grid-recipes">
+            <div >
+           
+            
+
+            </div>
+        </section>
+    <section >
+        <div class="contentAlign">
+           
+            <!--#region Links with Rating-->
+            <div>  <h2 class="grid-item">Recept</h2>
+                <div class="rate">
+                    <!-- Star 5 -->
+                    <input type="radio" id="star5" name="rate" value="5" />
+                    <label for="star5" title="text">5 stars</label>
+
+                    <!-- Star 4 -->
+                    <input type="radio" id="star4" name="rate" value="4" />
+                    <label for="star4" title="text">4 stars</label>
+
+                    <!-- Star 3 -->
+                    <input type="radio" id="star3" name="rate" value="3" />
+                    <label for="star3" title="text">3 stars</label>
+
+                    <!-- Star 2 -->
+                    <input type="radio" id="star2" name="rate" value="2" />
+                    <label for="star2" title="text">2 stars</label>
+
+                    <!-- Star 1 -->
+                    <input type="radio" id="star1" name="rate" value="1" />
+                    <label for="star1" title="text">1 star</label>
+
+            </div>
+            
+            </div>
+            <!--#endregion Links with Rating-->
+
+
+           
+        </div>
+    </section>
+
+    </main>
+
+
+
+    <!-- Vue Script -->
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    msg: 'Recept',
+                    recipes: [],
+                }
+            },
+            mounted(){
+                    fetch('http://localhost:3000/api/recipe')
+                         .then((response) => {
+                            return response.json();
+                        })
+                        .then((data) => {
+                            console.log(data);
+                            this.recipes = data.recipe;
+                        });
+            }
+        }).mount('#app')
+        </script>
+</body>
+<footer>This is the Contact space</footer>
+</html>

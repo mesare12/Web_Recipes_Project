@@ -41,7 +41,7 @@ li{
 
 a { 
 	font-size: 16px;
-	color: #f90; 
+	color: rgb(231, 129, 13); 
 	text-decoration: none;
 }
 header{
@@ -61,6 +61,15 @@ header{
 	font-style: italic;
 }
 
+.grid-recipes{
+	display: grid;
+	grid-template-rows: auto auto auto;
+}
+
+.recipes-page{
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
 main {
 	margin: 10px auto;
 	display: flexbox;
@@ -237,6 +246,7 @@ footer{
 	}
 	.grid-item{
 		font-size: medium;
+		width: 400px;
 	}
 }
 

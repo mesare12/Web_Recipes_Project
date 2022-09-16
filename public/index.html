@@ -24,8 +24,13 @@
                 <ul >
                     <li v-for="recipe in recipes" class="contentSplit">
                         <img :src="recipe.recipeImage" alt="Mat bild" class="DbImage">
-                        <span class="grid-item">{{ recipe.recipeName}}: Rating {{recipe.recipeRating}} <br><br> {{recipe.recipeDescription}} <br>
-                        {{recipe.recipeLink}}</span>
+                        <div class="grid-item grid-recipes">
+                            <p><a :href="recipe.recipeLink">
+                                {{ recipe.recipeName}}: Rating {{recipe.recipeRating}}  </a>
+                            </p>
+                            <p>{{recipe.recipeDescription}} </p>
+                            
+                        </div>
                     </li>
                 </ul>
             </div>
