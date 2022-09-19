@@ -34,9 +34,9 @@ ul{
 
 li{
 	font-size: 14px;
-	margin: 0;
-	padding: 0;
-	margin-bottom: 4px;
+	margin: 1px;
+	padding: 1px;
+	margin-bottom: 25px;
 }
 
 a { 
@@ -70,6 +70,9 @@ header{
 	display: grid;
 	grid-template-columns: 1fr 3fr;
 }
+
+/* Main Content */
+
 main {
 	margin: 10px auto;
 	display: flexbox;
@@ -85,9 +88,7 @@ main {
 	grid-gap: 5px;
 }
 
-.contentSplit img{
-	width: 100%;
-}
+/*          */
 
 .commercial1{
 	display: none;
@@ -102,9 +103,31 @@ main {
 	bottom: 20px;
 }
 
+/* Content Positioning */
+
 .contentAlign{
 	text-align: center;
 }
+
+.contentSplit{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 15px;
+}
+
+.contentSplit img{
+	width: 100%;
+}
+
+.contentRight {
+	float: right;
+	padding: 10px;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+/*          */
+
 
 .youtube-responsive{
     width: 100%;
@@ -114,11 +137,6 @@ main {
 	text-align: right;
 	padding: 10px;
 }
-.contentSplit{
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 15px;
-}	
 
 .DbImage{
 	background-color: #d8b08cda;

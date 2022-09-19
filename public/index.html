@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe page</title>
+
+    <script src="./src/app.vue"></script>
+
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <header>
         <h1 class="contentAlign">.NET <br>NomNom <br>Kitchen </h1>
 
-          <div class="searchbox">
-            <input type="text" placeholder="Recept" style="width: 100px;">
-            <button type="text"> Sök </button>
+ 
         </div>
 
     </header>
@@ -20,9 +21,13 @@
     <section id="mainText">
         <div class="contentAlign">
             <div id="app">
+
+                <input type="text" class="contentRight" placeholder="Recept" style="width: 100px" v-model="search">
+
                 <h2>{{msg}}</h2>
-                <ul >
-                    <li v-for="recipe in recipes" class="contentSplit">
+                
+                <ul>
+                    <li v-for="recipe in filteredList" class="contentSplit" :key="recipe">
                         <img :src="recipe.recipeImage" alt="Mat bild" class="DbImage">
                         <div class="grid-item grid-recipes">
                             <p><a :href="recipe.recipeLink">
@@ -125,6 +130,7 @@
                 return {
                     msg: 'Mina recept',
                     recipes: [],
+                    search: '',
                 }
             },
             mounted(){
@@ -136,7 +142,16 @@
                             console.log(data);
                             this.recipes = data.recipe;
                         });
+            },
+           computed: {
+                filteredList()
+                {
+                    return this.recipes.filter(recipe => {
+                    return recipe.recipeName.toLowerCase().includes(this.search.toLowerCase())
+                    })
+                }
             }
+
         }).mount('#app')
         </script>
 </body>
