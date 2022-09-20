@@ -8,17 +8,16 @@
 </head>
 <body>
     <header>
-        <h1 class="contentAlign">.NET <br>NomNom <br>Kitchen </h1>
-        <a href="index.html" >Tillbaka till startsidan</a>
-       
-
+        <h1 class="contentAlign title">.NET <br>NomNom <br>Kitchen </h1>
+        <a href="index.html" ><img src="./img/LogoNom.png" class="img-logo"></a>
     </header>
+
     <main class="recipes-page" id="mainText">
-        <section class="grid-recipes">
-            <div id="app">
+        <section class="grid-recipes" id="app">
+            <div>
                
                    
-                        <img :src="recipes.recipeImage" alt="Mat bild" class="DbImage">
+                        <img :src="recipes.recipeImage" alt="Mat bild">
                         <div class="grid-item grid-recipes">
                             <p><a :href="recipes.recipeLink">
                                 {{ recipes.recipeName}}: Rating {{recipes.recipeRating}}  </a>
@@ -31,6 +30,11 @@
             
 
             </div>
+        </section>
+        <section>
+            <div id="app"></div>
+            <h2>{{recipes.recipeName}}</h2>
+
         </section>
     <section >
         <div class="contentAlign">

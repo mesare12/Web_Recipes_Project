@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe page</title>
 
-    <script src="./src/app.vue"></script>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1 class="contentAlign">.NET <br>NomNom <br>Kitchen </h1>
+        <h1 class="contentAlign title">.NET <br>NomNom <br>Kitchen </h1>
 
         <img src="./img/LogoNom.png" class="img-logo">
         
@@ -26,7 +25,7 @@
                 <input type="text" class="contentRight" placeholder="Recept" style="width: 100px" v-model="search">
 
                 <h2>{{msg}}</h2>
-                <a href="recipes.html?id=2">hello</a>
+                <a href="testsida.html?id=2">hello</a>
                 <ul>
                     <li v-for="recipe in filteredList" class="contentSplit" :key="recipe">
                         <img :src="recipe.recipeImage" alt="Mat bild" class="DbImage">
@@ -40,7 +39,6 @@
                     </li>
                 </ul>
             </div>
-           
         </div>
         <div class="contentSplit">
             <section>

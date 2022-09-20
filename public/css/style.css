@@ -109,6 +109,13 @@ main {
 	text-align: center;
 }
 
+.title{
+	display: flex;
+	justify-content: center;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
 .contentSplit{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -183,7 +190,14 @@ footer{
 	height: 300px;
 }
 
+.background2{
+	background-color: #ccc;
+	background-image: none;
+}
 
+#ingredients{
+	background-color: #eee;
+}
 
 /* Star Rating */
 
