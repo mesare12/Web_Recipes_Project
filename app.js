@@ -1,7 +1,3 @@
-import Vue from "vue";
-import App from './App.vue';
-
-
 const express = require('express');
 const app = express();
 const cors = require('cors')
@@ -73,7 +69,7 @@ app.get("/api/recipe/:id", (req, res, next) => {
       }
       res.json({
           "message":"success",
-          "bok":row
+          "recipe":row
       })
     })
   

@@ -15,8 +15,19 @@
     </header>
     <main class="recipes-page" id="mainText">
         <section class="grid-recipes">
-            <div >
-           
+            <div id="app">
+               
+                   
+                        <img :src="recipes.recipeImage" alt="Mat bild" class="DbImage">
+                        <div class="grid-item grid-recipes">
+                            <p><a :href="recipes.recipeLink">
+                                {{ recipes.recipeName}}: Rating {{recipes.recipeRating}}  </a>
+                            </p>
+                            <p>{{recipes.recipeDescription}} </p>
+                            
+                        </div>
+                  
+             
             
 
             </div>
@@ -68,11 +79,16 @@
             data() {
                 return {
                     msg: 'Recept',
-                    recipes: [],
+                    recipes: []
                 }
             },
             mounted(){
-                    fetch('http://localhost:3000/api/recipe')
+                let fetchParam = new URLSearchParams(document.location.search)
+                let fetchId = fetchParam.get('id')
+                console.log('param' + fetchParam + ' '  + fetchId)
+                let fetchUrl = 'http://localhost:3000/api/recipe/' + fetchId
+                console.log('fetch url' + fetchUrl)
+                    fetch(fetchUrl)
                          .then((response) => {
                             return response.json();
                         })

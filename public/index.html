@@ -25,13 +25,13 @@
                 <input type="text" class="contentRight" placeholder="Recept" style="width: 100px" v-model="search">
 
                 <h2>{{msg}}</h2>
-                
+                <a href="recipes.html?id=2">hello</a>
                 <ul>
                     <li v-for="recipe in filteredList" class="contentSplit" :key="recipe">
                         <img :src="recipe.recipeImage" alt="Mat bild" class="DbImage">
                         <div class="grid-item grid-recipes">
-                            <p><a :href="recipe.recipeLink">
-                                {{ recipe.recipeName}}: Rating {{recipe.recipeRating}}  </a>
+                            <p><a :href="recipe.recipeLink + '?id=' + recipe.recipeID">
+                                {{ recipe.recipeName}}:</a> Rating {{recipe.recipeRating}} 
                             </p>
                             <p>{{recipe.recipeDescription}} </p>
                             
@@ -39,61 +39,6 @@
                     </li>
                 </ul>
             </div>
-            <!--#region Links with Rating-->
-            <div> <a href="testsida.html"> Ghee </a>
-                <div class="rate">
-                    <!-- Star 5 -->
-                    <input type="radio" id="star5" name="rate" value="5" />
-                    <label for="star5" title="text">5 stars</label>
-
-                    <!-- Star 4 -->
-                    <input type="radio" id="star4" name="rate" value="4" />
-                    <label for="star4" title="text">4 stars</label>
-
-                    <!-- Star 3 -->
-                    <input type="radio" id="star3" name="rate" value="3" />
-                    <label for="star3" title="text">3 stars</label>
-
-                    <!-- Star 2 -->
-                    <input type="radio" id="star2" name="rate" value="2" />
-                    <label for="star2" title="text">2 stars</label>
-
-                    <!-- Star 1 -->
-                    <input type="radio" id="star1" name="rate" value="1" />
-                    <label for="star1" title="text">1 star</label>
-
-            </div>
-            
-            </div>
-
-            <div> <a href="testsida.html"> Mayak Ägg </a>
-                <div class="rate">
-                    <!-- Star 5 -->
-                    <input type="radio" id="2star5" name="rate2" value="5" />
-                    <label for="2star5" title="text">5 stars</label>
-
-                    <!-- Star 4 -->
-                    <input type="radio" id="2star4" name="rate2" value="4" />
-                    <label for="2star4" title="text">4 stars</label>
-
-                    <!-- Star 3 -->
-                    <input type="radio" id="2star3" name="rate2" value="3" />
-                    <label for="2star3" title="text">3 stars</label>
-
-                    <!-- Star 2 -->
-                    <input type="radio" id="2star2" name="rate2" value="2" />
-                    <label for="2star2" title="text">2 stars</label>
-
-                    <!-- Star 1 -->
-                    <input type="radio" id="2star1" name="rate2" value="1" />
-                    <label for="2star1" title="text">1 star</label>
-
-                </div>
-
-            </div>
-            <!--#endregion Links with Rating-->
-
-
            
         </div>
         <div class="contentSplit">
