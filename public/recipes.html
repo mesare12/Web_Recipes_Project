@@ -16,22 +16,22 @@
         <section class="recipes-page" id="app">
             <div>
                         <img :src="recipes.recipeImage" alt="Mat bild" class="recipe-images">
+                        <br> <br>
+                        <span>{{recipes.recipeIngredients}}</span> 
             </div>
             <div class="contentAlign">
-                            <h1>
-                                {{ recipes.recipeName}} : Rating {{recipes.recipeRating}}
-                            </h1>
-                            <p>{{recipes.recipeDescription}} </p>
-            </div>
-            <div>
-                <span>{{recipes.recipeIngredients}}</span>
-                
+                            <h1> {{ recipes.recipeName}}</h1>
+                            <h2>Rating {{recipes.recipeRating}}</h2>
+                          
+                            <p class=" grid-item textBox">{{recipes.recipeDescription}} </p>
+                            <br> <br>
+                            <p class="textBox">{{recipes.recipeSteps}}</p>
             </div>
         </section>
 
     <section >
         <div class="contentAlign">
-            <span>{{recipes.recipeIngredients}}</span> 
+            
         </div>
     </section>
 
