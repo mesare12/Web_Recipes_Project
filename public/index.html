@@ -20,13 +20,12 @@
     <main>
     <section id="mainText">
         <article class="contentAlign">
+            
             <div id="app">
-
+                <p class="contentRight"> <a href="recipe-form.html">Add a recipe</a></p>
                 <input type="text" class="contentRight" placeholder="Recept" style="width: 100px" v-model="search">
 
                 <h2>{{msg}}</h2>
-               <p> <a href="recipe-form.html">Add a recipe</a></p>
-                <a href="recipes.html?id=3">hello</a>
                 <ul>
                     <li v-for="recipe in filteredList" class="contentSplit" :key="recipe">
                         <img :src="recipe.recipeImage" alt="Mat bild" class="DbImage">
