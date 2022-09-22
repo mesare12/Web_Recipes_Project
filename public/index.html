@@ -19,7 +19,7 @@
     </header>
     <main>
     <section id="mainText">
-        <div class="contentAlign">
+        <article class="contentAlign">
             <div id="app">
 
                 <input type="text" class="contentRight" placeholder="Recept" style="width: 100px" v-model="search">
@@ -29,17 +29,17 @@
                 <ul>
                     <li v-for="recipe in filteredList" class="contentSplit" :key="recipe">
                         <img :src="recipe.recipeImage" alt="Mat bild" class="DbImage">
-                        <div class="grid-item grid-recipes">
+                        <article class="grid-item grid-recipes">
                             <p><a :href="recipe.recipeLink + '?id=' + recipe.recipeID">
                                 {{ recipe.recipeName}}:</a> Rating {{recipe.recipeRating}} 
                             </p>
                             <p>{{recipe.recipeDescription}} </p>
                             
-                        </div>
+                        </article>
                     </li>
                 </ul>
             </div>
-        </div>
+        </article>
         <div class="contentSplit">
             <section>
                 <img src="./img/LogoNom.png" alt="Recipe" >

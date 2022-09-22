@@ -14,27 +14,27 @@
 
     <main id="mainText" class="neutral">
         <section class="recipes-page" id="app">
-            <div>
+            <article>
                         <img :src="recipes.recipeImage" alt="Mat bild" class="recipe-images">
                         <br> <br>
                         <span>{{recipes.recipeIngredients}}</span> 
-            </div>
-            <div class="contentAlign">
+            </article>
+            <article class="contentAlign">
                             <h1> {{ recipes.recipeName}}</h1>
                             <h2>Rating {{recipes.recipeRating}}</h2>
                           
                             <p class=" grid-item textBox">{{recipes.recipeDescription}} </p>
                             <br> <br>
                             <p class="textBox">{{recipes.recipeSteps}}</p>
-            </div>
-        </section>
-
-    <section >
-        <div class="contentAlign">
-            
-        </div>
-    </section>
-
+            </article>
+            <article>
+            <!--Left space from grid-->
+            </article>
+            <article>
+                <h2>Some nice music to go with the cooking</h2>
+                <iframe class="youtube-responsive"src="https://www.youtube.com/embed/Mi4ZbyP8qdg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </article>       
+             </section>
     </main>
 
 
