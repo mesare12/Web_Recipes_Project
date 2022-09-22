@@ -95,3 +95,41 @@ app.get("/api/recipe/:id", (req, res, next) => {
     })
   
 })
+
+
+app.delete("/api/recipe", (req, res, next) => {
+  db.run(
+      'DELETE FROM recipe WHERE recipeID = ?',
+      req.body.recipeID,
+      function (err, result) {
+          if (err){
+              res.status(400).json({"error": res.message})
+              return;
+          }
+          res.json({"message":"deleted", rows: this.changes})
+      })
+})
+
+app.post("/api/recipe", (req, res, next) => {
+  let data = {
+      recipeName: req.body.recipeName,
+      recipeDescription: req.body.recipeDescription,
+      recipeRating: req.body.recipeRating,
+      recipeImage: req.body.recipeImage,
+      recipeIngredients: req.body.recipeIngredients,
+      recipeLink: req.body.recipeLink
+  }
+  let sql ='INSERT INTO recipe (recipeName, recipeDescription, recipeRating, recipeImage, recipeIngredients, recipeLink) VALUES (?,?,?,?,?,?)'
+  let params =[data.recipeName, data.recipeDescription, data.recipeRating, data.recipeImage, data.recipeIngredients, data.recipeLink]
+  db.run(sql, params, function (err, result) {
+      if (err){
+          res.status(400).json({"error": err.message})
+          return;
+      }
+      res.json({
+          "message": "success",
+          "recipe": data,
+          "id" : this.lastID
+      })
+  })
+})

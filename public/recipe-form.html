@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add recipe</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="contentAlign title">.NET <br>NomNom <br>Kitchen </h1>
+
+        <a href="index.html" ><img src="./img/LogoNom.png" class="img-logo"></a>
+        
+ 
+
+    </header>
+    <main class="neutral">
+        <article class="background2">
+            <div class="contentAlign">
+                <form method = "POST" id="formRecipe">
+                    <label>Create your recipes!</label><br>
+                    <input type="text" placeholder="Name" id="recipeName">
+                    <input type="text" placeholder="Description" id="recipeDescription">
+                    <input type="text" placeholder="Ingredients" id="recipeIngredients">
+                    <input type="text" placeholder="Steps" id="recipeSteps">
+                    <input type="number" placeholder="Rating" id="recipeRating">
+                    <br>
+                    <button>Add</button>
+                </form>
+                <ul  id="app" class="contentAlign">
+                    <li v-for="(recipes, index) in recipes" :key="recipes.id" :class="{prio: recipes.prio}">
+                        {{"Name: " + recipes.recipeName}} <br> {{"Description: " + recipes.recipeDescription }} <br> {{"Rating: " + recipes.recipeRating}}
+                        <br>
+                        <br>
+                        <br>
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+
+    </main>
+</section>
+
+<script src="js/post-recipe.js"></script>
+<script src="https://unpkg.com/vue@3"></script>
+<script>
+  const app = Vue.createApp({
+      data() {
+          return {
+              recipes: [],
+          }
+      },
+    methods: {
+
+    },
+    mounted(){
+        fetch('http://localhost:3000/api/recipe')
+                         .then((response) => {
+                            return response.json();
+                        })
+                        .then((data) => {
+                            console.log(data);
+                            this.recipes = data.recipe;
+                        });
+            },
+}).mount('#app')
+</script>
+</body>

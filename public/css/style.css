@@ -114,7 +114,9 @@ main {
 	text-align: center;
 }
 
-
+.create-recipe{
+	
+}
 
 .title{
 	display: flex;
@@ -228,7 +230,7 @@ footer{
 .youtube-responsive{
     width: 100%;
     height: 350px;
-	
+
 }
 
 /* Star Rating */
