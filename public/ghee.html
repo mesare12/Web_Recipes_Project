@@ -3,16 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghee - Klarifierat Smör</title>
+    <title> Ghee Recipe </title>
     <link type="text/css" rel="stylesheet" href="css/style.css">
 </head>
 
 
+<!-- Mycket är hårdkodat med HTML/CSS för att ge sidan en egen karaktär, då jag visste att jag skulle ha många bilder.
+    Har en egen style för att det inte skulle påverka andras arbete -->
+
 <!-- Personal CSS Style -->
 <style>
+
+/* Smaller when screen is shrunk */
+@media screen and (max-width: 1524px)
+{
+    .gheeClassImg
+    {
+
+        max-width: 100%;
+        max-height: 50%;
+        min-width: 400px;
+        min-height: 500px;
+        height: auto;
+
+    }
+}
     title
     {
-        position: fixed;
+        font-display:initial;
 
     }
     main
@@ -21,7 +39,6 @@
         background-color: yellow;
         box-shadow: 5px;
         border-radius: 5px;
-     
     }
 
     header
@@ -29,6 +46,7 @@
         background-image: url("./img/indianTexture_Darker.png");
         background-color: rgba(0, 0, 0, 0.266);
         border-radius: 20px;
+        margin-bottom: 10px;
     }
 
     h1
@@ -65,13 +83,12 @@
     {
         font-style: italic;
         font-style: oblique;
-        font-size: 14px;
+        font-size: 16px;
         margin-left: 10px;
     }
     li
     {
-        font-style: oblique;
-        font-size: 15px;
+        font-size: 17px;
     }
 
     aside
@@ -92,8 +109,7 @@
     
     .gheeClassImg
     {
-        border-style:outset;
-        border-color: rgb(250, 221, 147);
+
         width: 700px;
         height: 500px;
         
@@ -106,6 +122,8 @@
         border-color: rgb(255, 187, 0);
         width: 300px;
         height: 300px;
+
+        
         margin-bottom: 55px;
         
 
@@ -167,12 +185,13 @@
     
     <header>
         <nav>
-            <h1> Ghee - Skirat/Klarifierat Smör </h1>
+            <h1> Ghee </h1>
             <p> Recept av Karl-Johan Tjust </p>
-            <img src="./img/gheeShowOff.png" class="gheeClassImg" alt="imgGhee"/>
-        
+            <div> <img src="./img/gheeShowOff.png" class="gheeClassImg" alt="imgGhee"/> </div>
         </nav>
+
         
+        <aside> <a href="index.html" ><img src="./img/LogoNom.png" class="img-logo"></a></aside>
         
         
 
@@ -187,7 +206,7 @@
             <h2> Ingredienser </h2>
             <p>
                 Ghee är hundraprocentig smörfett som långkokats genom en särskild uråldrig indisk teknik.
-                Historiskt sätt har den används ceremoniellt och som en väldigt effektiv matolja.
+                Under historien har den används ceremoniellt och som en väldigt effektiv matolja.
     
                 Den stora fördelen med Ghee är att den har mycket högre rökpunkt än andra oljor (230 °C) vilket gör ghee till en mycket bättre olja
                 för matlagning vid höga temperaturer då den inte lika lätt bränns vid.

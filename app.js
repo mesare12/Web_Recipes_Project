@@ -35,14 +35,16 @@ app.get("/api/recipe", (req, res) => {
       })
 });
 
-/* app.update("/api/recipe", (req, res, next) => {
+
+/*//Update
+app.patch("/api/recipe:id", (req, res, next) => {
   let data = {
     recipeName: req.body.recipeName,
     recipeCategory: req.body.recipeCategory,
     recipeRating: req.body.recipeRating,
     recipeID: req.body.recipeID
   }
-  let sql = 'UPDATE recipe SET recipeRating = ? WHERE recipeID = ?';
+  let sql = 'UPDATE recipe SET recipeName = ?, recipeCategory = ?, recipeRating = ? WHERE recipeID = ?';
   let params =[data.recipeName, data.recipeCategory, data.recipeRating];
   db.run(sql, params, function(err, result){
     if(err){
@@ -54,7 +56,8 @@ app.get("/api/recipe", (req, res) => {
       "recipe" : data,
       "id"  : this.lastID
     })
-  }) */
+  })
+});*/
 
 //Används just nu inte till ngt. Men om vi kommer på ngt bra så anpassat vi denna.
 app.put("/api/recipe", (req, res, next) => {
